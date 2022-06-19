@@ -435,7 +435,6 @@ impl Painter {
             let imdelta = s.get(i).unwrap();
             match i {
                 egui::TextureId::User(id) => {
-                    // println!("user : {}", id);
                     let pixels = match &imdelta.image {
                         egui::epaint::image::ImageData::Color(c) => c.pixels.clone(),
                         egui::epaint::image::ImageData::Font(c) => c.srgba_pixels(1.0).collect(),
@@ -493,14 +492,6 @@ impl Painter {
                         upixels.push(srgba.a());
                         oc.push(srgba.r());
                     }
-                    // for i in 0..oc.len() {
-                    //     if i % size[0] == 0 {
-                    //         println!()
-                    //     }
-                    //     print!("{:?}\t", oc[i]);
-                    // }
-                    // panic!();
-                    // println!("managed : {}", id);
                     if let Some([from, to]) = imdelta.pos {
                         let mut to_update = self.managed_textures.get_mut(id).unwrap();
                         let mut out = to_update.pixels[0..(from - 1) * 4].to_vec();
@@ -531,8 +522,6 @@ impl Painter {
         delta: egui::TexturesDelta,
     ) {
         // self.upload_egui_texture(egui_texture);
-
-        println!("{}", meshes.len());
 
         self.set_texture_delta(delta.set);
 
