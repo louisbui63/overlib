@@ -1,6 +1,7 @@
 /target
 glad-gl/Cargo.lock
 glad-gl/target
+dlsym/target
 Cargo.lock
 l
 notes.md
