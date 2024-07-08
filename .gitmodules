@@ -1,0 +1,3 @@
+[submodule "dlopen"]
+	path = dlopen
+	url = https://github.com/louisbui63/rust-dlopen
