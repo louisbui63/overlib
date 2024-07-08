@@ -532,10 +532,6 @@ impl Painter {
             //Let OpenGL know we are dealing with SRGB colors so that it
             //can do the blending correctly. Not setting the framebuffer
             //leads to darkened, oversaturated colors.
-            gl::Enable(gl::FRAMEBUFFER_SRGB);
-
-            gl::Enable(gl::SCISSOR_TEST);
-            gl::Enable(gl::BLEND);
             gl::BlendFunc(gl::ONE, gl::ONE_MINUS_SRC_ALPHA); // premultiplied alpha
             gl::UseProgram(self.program);
             gl::ActiveTexture(gl::TEXTURE0);
@@ -593,7 +589,6 @@ impl Painter {
                     todo!()
                 }
             }
-            gl::Disable(gl::FRAMEBUFFER_SRGB);
         }
         self.free_texture_delta(delta.free);
     }

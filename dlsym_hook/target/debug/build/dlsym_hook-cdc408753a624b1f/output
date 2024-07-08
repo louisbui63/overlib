@@ -1,0 +1,2 @@
+cargo:rustc-link-search=native=/home/louisbui63/dev/overlay/real_dlsym
+cargo:rustc-link-lib=rdlsym
